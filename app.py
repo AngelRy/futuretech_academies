@@ -11,27 +11,41 @@ st.set_page_config(
 # --- CUSTOM STYLES ---
 st.markdown("""
 <style>
-    /* --- GLOBAL COLORS AND TYPOGRAPHY --- */
+    /* --- GLOBAL COLORS & TYPOGRAPHY --- */
     body, .main {
-        background-color: #101828;
-        color: #F5F7FA;
-        font-family: 'Open Sans', 'Segoe UI', sans-serif;
-        font-size: 1.05rem;
-        line-height: 1.6;
+        background-color: #0E1117;
+        color: #F8FAFC;
+        font-family: 'Inter', 'Segoe UI', sans-serif;
+        font-size: 1.15rem; /* roughly 18px */
+        line-height: 1.7;
     }
 
     h1, h2, h3, h4 {
-        color: #2DD4BF;
+        color: #00D3A9;
         font-weight: 700;
+        margin-top: 1.2rem;
+        margin-bottom: 0.6rem;
     }
 
     p, li {
-        color: #E5E7EB;
+        color: #E2E8F0;
+        font-weight: 400;
     }
 
+    em {
+        color: #C7D2FE;
+    }
+
+    strong {
+        color: #F9FAFB;
+        font-weight: 600;
+    }
+
+    /* --- LINKS --- */
     a {
-        color: #2DD4BF;
+        color: #00D3A9;
         text-decoration: none;
+        font-weight: 500;
     }
     a:hover {
         text-decoration: underline;
@@ -39,15 +53,15 @@ st.markdown("""
 
     /* --- HERO SECTION --- */
     .hero {
-        text-align: center;
-        padding: 4rem 2rem 2.5rem 2rem;
         background: linear-gradient(160deg, #1E293B, #0F172A);
         border-radius: 16px;
-        margin-bottom: 3rem;
+        padding: 3rem 2rem;
+        text-align: center;
         color: #F8FAFC;
+        margin-bottom: 3rem;
     }
     .hero h1 {
-        font-size: 3.2rem;
+        font-size: 3.4rem;
         margin-bottom: 0.6rem;
         color: #38BDF8;
     }
@@ -59,64 +73,67 @@ st.markdown("""
 
     /* --- SIDEBAR --- */
     [data-testid="stSidebar"] {
-        background-color: #0F172A !important;
+        background-color: #111827 !important;
     }
-    [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3 {
-        color: #38BDF8;
+    [data-testid="stSidebar"] * {
+        color: #E5E7EB !important;
+        font-size: 1.05rem !important;
     }
-    [data-testid="stSidebar"] p {
-        color: #E2E8F0;
-        font-size: 0.95rem;
+
+    /* --- SECTION BOXES --- */
+    .stAlert, .stMarkdown div {
+        border-radius: 10px;
+        padding: 1rem 1.2rem;
+    }
+
+    /* --- EMPHASIS BOXES --- */
+    .bluebox {
+        background-color: #1E3A8A;
+        color: #E0E7FF;
+        padding: 0.8rem 1.2rem;
+        border-radius: 8px;
+    }
+    .greenbox {
+        background-color: #064E3B;
+        color: #A7F3D0;
+        padding: 0.8rem 1.2rem;
+        border-radius: 8px;
     }
 
     /* --- TABS --- */
     .stTabs [data-baseweb="tab-list"] {
-        background-color: #1E293B;
+        background-color: #1F2937;
         border-radius: 8px;
-        padding: 10px;
+        padding: 8px;
     }
     .stTabs [data-baseweb="tab"] {
-        color: #E2E8F0;
+        color: #E5E7EB;
         font-weight: 500;
-        font-size: 1.05rem;
+        font-size: 1.1rem;
     }
     .stTabs [aria-selected="true"] {
-        background-color: #334155;
-        color: #2DD4BF;
+        background-color: #374151;
+        color: #00D3A9;
     }
 
     /* --- BUTTONS --- */
     .stButton>button {
-        background-color: #2DD4BF;
+        background-color: #00D3A9;
         color: #0F172A;
-        border: none;
-        padding: 0.7em 1.6em;
-        border-radius: 6px;
         font-weight: bold;
         font-size: 1.1rem;
+        padding: 0.7em 1.6em;
+        border-radius: 8px;
+        border: none;
         transition: all 0.2s ease-in-out;
     }
     .stButton>button:hover {
-        background-color: #22B6A8;
+        background-color: #00B894;
         transform: scale(1.03);
-    }
-
-    /* --- INFO AND ALERT BOXES --- */
-    .stAlert {
-        border-radius: 8px;
-        font-size: 1rem;
-    }
-
-    /* --- TABLES --- */
-    table {
-        font-size: 1rem;
-        border-collapse: collapse;
-    }
-    th, td {
-        padding: 8px 12px;
     }
 </style>
 """, unsafe_allow_html=True)
+
 
 
 # --- SIDEBAR ---
