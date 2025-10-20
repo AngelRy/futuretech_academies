@@ -11,74 +11,113 @@ st.set_page_config(
 # --- CUSTOM STYLES ---
 st.markdown("""
 <style>
-    /* Overall theme */
-    body {
-        background-color: #0A192F;
-        color: #E6E6E6;
-    }
-    .main {
-        background-color: #0A192F;
-        color: #E6E6E6;
-    }
-    h1, h2, h3, h4 {
-        color: #64FFDA;
-    }
-    p, li {
-        color: #CCD6F6;
-    }
-    hr {
-        border: 1px solid #233554;
+    /* --- GLOBAL COLORS AND TYPOGRAPHY --- */
+    body, .main {
+        background-color: #101828;
+        color: #F5F7FA;
+        font-family: 'Open Sans', 'Segoe UI', sans-serif;
+        font-size: 1.05rem;
+        line-height: 1.6;
     }
 
-    /* Tabs styling */
+    h1, h2, h3, h4 {
+        color: #2DD4BF;
+        font-weight: 700;
+    }
+
+    p, li {
+        color: #E5E7EB;
+    }
+
+    a {
+        color: #2DD4BF;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+
+    /* --- HERO SECTION --- */
+    .hero {
+        text-align: center;
+        padding: 4rem 2rem 2.5rem 2rem;
+        background: linear-gradient(160deg, #1E293B, #0F172A);
+        border-radius: 16px;
+        margin-bottom: 3rem;
+        color: #F8FAFC;
+    }
+    .hero h1 {
+        font-size: 3.2rem;
+        margin-bottom: 0.6rem;
+        color: #38BDF8;
+    }
+    .hero h3 {
+        font-size: 1.4rem;
+        color: #CBD5E1;
+        font-weight: 400;
+    }
+
+    /* --- SIDEBAR --- */
+    [data-testid="stSidebar"] {
+        background-color: #0F172A !important;
+    }
+    [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3 {
+        color: #38BDF8;
+    }
+    [data-testid="stSidebar"] p {
+        color: #E2E8F0;
+        font-size: 0.95rem;
+    }
+
+    /* --- TABS --- */
     .stTabs [data-baseweb="tab-list"] {
-        background-color: #112240;
-        border-radius: 10px;
+        background-color: #1E293B;
+        border-radius: 8px;
         padding: 10px;
     }
     .stTabs [data-baseweb="tab"] {
-        color: #CCD6F6;
+        color: #E2E8F0;
         font-weight: 500;
+        font-size: 1.05rem;
     }
     .stTabs [aria-selected="true"] {
-        background-color: #233554;
-        color: #64FFDA;
+        background-color: #334155;
+        color: #2DD4BF;
     }
 
-    /* Buttons */
+    /* --- BUTTONS --- */
     .stButton>button {
-        background-color: #64FFDA;
-        color: #0A192F;
+        background-color: #2DD4BF;
+        color: #0F172A;
         border: none;
-        padding: 0.6em 1.4em;
+        padding: 0.7em 1.6em;
         border-radius: 6px;
         font-weight: bold;
+        font-size: 1.1rem;
         transition: all 0.2s ease-in-out;
     }
     .stButton>button:hover {
-        background-color: #52E0C4;
-        color: #0A192F;
-        transform: scale(1.02);
+        background-color: #22B6A8;
+        transform: scale(1.03);
     }
 
-    /* Hero Section */
-    .hero {
-        text-align: center;
-        padding: 5rem 2rem 3rem 2rem;
-        background: radial-gradient(circle at top left, #112240, #0A192F 70%);
-        border-radius: 16px;
-        margin-bottom: 3rem;
+    /* --- INFO AND ALERT BOXES --- */
+    .stAlert {
+        border-radius: 8px;
+        font-size: 1rem;
     }
-    .hero h1 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
+
+    /* --- TABLES --- */
+    table {
+        font-size: 1rem;
+        border-collapse: collapse;
     }
-    .hero h3 {
-        color: #A8B2D1;
-        font-weight: 400;
+    th, td {
+        padding: 8px 12px;
     }
 </style>
 """, unsafe_allow_html=True)
+
 
 # --- SIDEBAR ---
 with st.sidebar:
